@@ -20,6 +20,7 @@ date=2021-04-03
 backupfile="$backdest/$pc-$distro-$type-$date.tar.gz"
 
 ### USB stick is /dev/sdc
+boot_dev=/dev/sd
 boot_part=/dev/sdc1
 rootfs_part=/dev/sdc2
 make_part=n
@@ -28,8 +29,8 @@ mnt_boot=/mnt/boot
 mnt_rootfs=/mnt/rootfs
 
 if [ $make_part = "y" ]; then  
-echo "- parition sda"
-fdisk /dev/sdc <<EOF
+echo "- parition $boot_dev"
+fdisk "$boot_dev" <<EOF
 o
 n
 p

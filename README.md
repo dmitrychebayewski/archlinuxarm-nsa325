@@ -74,6 +74,8 @@ See provided script [upgrade_system](./scripts/upgrade_system.sh)
 See provided script: [upgrade_system](./scripts/upgrade_system.sh)
 ### Installing packages
 See provided script: [install_packages](./scripts/install_packages.sh)
+### Add data volumes to your system
+See provided script: [](./scripts/mount_shared_filesystem.sh)
 ### Adding sudo users
 See proviced script: [add_wheel_users](./scripts/add_wheel_users.sh)
  
