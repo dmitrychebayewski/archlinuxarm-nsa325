@@ -118,10 +118,21 @@ You might need to change default values, provided in */etc/sshd_conf*
 Match User secret
 PasswordAuthentication yes
 ```
-### 
-### Instal and set up Samba
-Please study Arch Linux documentation.
 
+### Installing and setting up Samba
+Please study Arch Linux documentation.
+### Adjust SMB browsing behavior in macOS
+[Speed up browsing on network shares](https://support.apple.com/en-us/HT208209)
+>To speed up SMB file browsing, you can prevent macOS from reading .DS_Store files on SMB shares. This makes the Finder use only basic information to immediately display each folder's contents in alphanumeric order. Use this Terminal command:
+```
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+```
+
+>Then log out of your macOS account and log back in.
+>To reenable sorting, use this command:
+```
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool FALSE
+```
 ## Update strategy
 [Citaton from Vultr documentation](https://www.vultr.com/docs/installing-2019-arch-linux-on-a-vultr-server#Configure_SSH)
 >Because Arch is a "rolling release", you can upgrade all packages you have installed whenever you'd like. 
@@ -140,6 +151,20 @@ Before upgrading all packages, it is crucial that you make full system backup.
 Tar backup, produced with above script, is very quickly restored to boot HDD/SSD with the following script: [restore_root_fs](./scripts/restore_root_fs.sh)
 It is very recommendable to restore your backup on your second HDD drive immediately, as your backup job is done. 
 Then, you always have a swap bootable HDD.
+## Scheduled backup
+
+Create the following files in /etc/systemd/system/
+ * [backup.timer](./scripts/backup.timer)
+ * [backup.service](./scripts/backup.service)
+
+Start backup.timer and enable it on boot.
+
+
+```
+#systemd-analyze verify /etc/systemd/system/backup.*
+#systemctl start backup.timer
+#sudo systemctl enable backup.timer
+```
 
 ## Asking questions
 

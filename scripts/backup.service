@@ -1,0 +1,5 @@
+[Unit]
+Description="A script to backup root filesystem"
+
+[Service]
+ExecStart=/usr/local/bin/backup_root_filesystem.sh

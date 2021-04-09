@@ -1,0 +1,6 @@
+
+[Unit]
+Description= Stops the minetest.service at 7 pm everyday
+
+[Timer]
+Unit= backup.service
