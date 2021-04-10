@@ -68,6 +68,11 @@ Password:
 New password:
 
 ```
+### Synchronize the clock
+Make sure the system clock is accurate.
+```
+#timedatectl set-ntp true
+```
 ### Signing packages
 See provided script [upgrade_system](./scripts/upgrade_system.sh)
 ### Updating Arch linux

@@ -4,6 +4,8 @@ pacman --sync nano
 pacman --sync mc
 pacman --sync samba
 pacman -S uboot-env uboot-mkimage
+pcaman --sync rsync
+pacman --sync pbzip2
 echo "You might need to configure installed services"
 echo "Edit smb.conf *sudo nano /etc/samba/smb.conf*"
 echo "Enable the service unit: *sudo systemctl enable smb.service*"
