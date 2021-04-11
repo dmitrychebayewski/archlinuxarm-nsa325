@@ -173,16 +173,18 @@ Start backup.timer and enable it on boot.
 
 ## Asking questions
 
-Q. What are benefits of this solution over external USB drive?
+Q. What are benefits of NAS for home office over external USB drive?
 >External USB drive cannot be set up as a small file server.
 So, using NAS, you can collaborate on hobby projects with your partners, and no one needs to use a private computer as file server.
 
 Q. What are advantages of Arch Linux ARM over factory ZyXEL Nas OS?
->You can very flexibly set up any service, any feature, not supported by factory ZyXEL Nas OS, such as NFS4 or rtorrent, or tmux.
+>When the customer decides for Arch linux ARM, he or she can very flexibly set up any service, any feature, not supported by factory ZyXEL Nas OS meta repositories. Such features are for example NFS4, rtorrent, nginx or tmux.
 
-Q. What are disadvantages of Arch Linux Arm?
+Q. What are disadvantages of described customization over Arch Linux Arm compared to factory ZyXEL Nas OS?
 >Installing Arch Linux ARM will void ZyXEL warranty. Also, Arch Linux Arm is "rolling release" system, so you will need to update your syetem on very frequent schedule. You also need to study the updates carefully to know whether they imply breaking changes that could require your intervention.
 
+>Factory ZyXEL NOS is reportedly an assembly, based on Arch Linux Arm [(see the article, "Building the Zyxel NAS326" on Craig Amos's blog)](https://www.craigamos.rocks/building-the-zyxel-nas326/).
+But factory configuration  uses a ramdisk to load the Linux kernel, leaving 2 SATA slots available for RAID1 setup. Arch Linux Arm (alarm) rootfs needs one SATA interface for a hard drive, leeaving 1 slot available for user data hard drive, and you cannot configure RAID1. 
 
 ## Contributing
 
