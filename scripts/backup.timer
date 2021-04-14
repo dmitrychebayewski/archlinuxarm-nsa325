@@ -1,6 +1,10 @@
 
 [Unit]
-Description= Stops the minetest.service at 7 pm everyday
+Description= Runs backup_root_fs.sh on Fridays at 21:00
 
 [Timer]
+OnCalendar=Fri 21:00
 Unit= backup.service
+
+[Install]
+WantedBy= basic.target
