@@ -170,6 +170,11 @@ Start backup.timer and enable it on boot.
 #systemctl start backup.timer
 #sudo systemctl enable backup.timer
 ```
+## Pruductivity
+
+### Using tmux
+
+It is very convenient to run long during processes (copying files etc.) in [**tmux**](./tmux.md).
 
 ## Asking questions
 
