@@ -170,7 +170,7 @@ Start backup.timer and enable it on boot.
 #systemctl start backup.timer
 #sudo systemctl enable backup.timer
 ```
-## Pruductivity
+## Productivity
 
 ### Using tmux
 
