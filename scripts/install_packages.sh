@@ -5,7 +5,7 @@ pacman --sync mc
 pacman --sync samba
 pacman -S uboot-env uboot-mkimage
 pcaman --sync rsync
-pacman --sync pbzip2 powertop htop tmux
+pacman --sync  arch-install-scripts pbzip2 powertop htop tmux
 echo "You might need to configure installed services"
 echo "Edit smb.conf *sudo nano /etc/samba/smb.conf*"
 echo "Enable the service unit: *sudo systemctl enable smb.service*"

@@ -49,14 +49,15 @@ w
 EOF
 echo " * pause for ioctl to re-sync partitions"
 sleep 5
+ echo "- make boot filesystem"
+#  ext2 makes u-boot happy.
+ mkfs.ext2 -L "boot" "$boot_part"
 fi
 
 ###
-#  make filesystems
-echo "- make filesystems"
-#  ext2 makes u-boot happy.
-mkfs.ext2 -L "boot" "$boot_part"
+#  make rootfs filesystem
 #  stock does not know how to make ext4!
+echo "- make rootfs  filesystem"
 mkfs.ext4 -L "rootfs" "$rootfs_part"
 
 ###
@@ -74,19 +75,17 @@ mount -t ext4 "$rootfs_part" "$mnt_rootfs"
 #  extract the rootfs
 echo "- extract rootfs"
 tar --acls --xattrs -xpf $backupfile -C "$mnt_rootfs"
-
+# /boot was not included in the backup
+mkdir -p "$mnt_rootfs"/boot 
 #  copy the uImage to the boot partition
 echo "- prepare boot partition"
-cp -aR "$mnt_rootfs/boot/*" "$mnt_boot"
-
+cp -aR /boot/* "$mnt_boot"
 #  always make sure you're sync'd!
 sync
-
 ###
 #  prepare for first boot
 #  set the bootcmd to run the steps to convert.
 ###
 #  we're done here
-echo "- SHUTTING DOWN!"
-sync
-shutdown now
+# echo "- SHUTTING DOWN!"  
+#shutdown now

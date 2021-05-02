@@ -39,7 +39,7 @@ The solution is mounting the boot partition at default mount point /boot.
 This is achieved by editing /etc/fstab file. These steps have been done:
 * genfstab utility installed:
   ```
-   #pacman -S arch-install-scripts-24-1
+   #pacman -S arch-install-scripts
   ```
 * /etc/fstab file backed up
 * Delete the files from /boot directory
@@ -66,7 +66,8 @@ This is achieved by editing /etc/fstab file. These steps have been done:
 * /dev/sda1 record is copied from new fstab to /etc/fstab and edit your /etc/fstab
   so that /etc/fstab finally has record:
   ```
-  # <file system> <dir> <type> <options> <dump> <pass>                                                                          /dev/sda1     /boot        ext2 rw,relatime     0        2   
+  # <file system> <dir> <type> <options> <dump> <pass>
+  /dev/sda1     /boot        ext2 rw,relatime     0        2   
   ```
 * [Readme.md](./README.md) updated 
 
