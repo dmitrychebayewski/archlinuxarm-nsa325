@@ -15,8 +15,3 @@ pacman --sync archlinuxarm-keyring
 pacman-key --populate archlinuxarm
 #Upgrade all system packages. Be sure to note the upgraded packages and any output that requires your attention during the upgrade process.
 pacman --sync --sysupgrade
-
-#Copy kernel to /dev/sda1
-echo mount /dev/sda1 /mnt/boot
-echo cp -aR /boot/* /mnt/boot
-echo umount /dev/sda1
