@@ -25,3 +25,12 @@ $ systemctl enable docker
 $ systemctl stop docker
 ```
 
+## Running RabbitMQ management container
+These commands will assign a tagret address to eth0 interface
+on the host and bind exposed ports to the target  ip address and port on the host
+
+```
+#ip addr add 192.168.1.61/21 dev eth0
+$docker run -d --hostname my-rabbit --name some-rabbit -p 192.168.1.61:8080:15672 arm32v5/rabbitmq:3-management
+```
+

@@ -28,7 +28,7 @@ I partitioned the drive for a new installation of Arch linux Arm, mounted the pa
 ```
 cp -aR /mnt/rootfs/boot/* /mnt/boot
 ```
-Then, I did not update the /etc/fstab and the boot partition was not accessible by pacman, as it is normally assumed.
+I did not update  /etc/fstab, and my boot partition became unaccessible by pacman.
 When I ran the system update, the new kernel was generated to /boot. But the kernel files, initially copied to /dev/sda1 ext2 boot partition, were not replaced by pacman.
 The consequence of this was incomplete system update:
  * Root file system (mounted at /) - updated with new versions of libraries and modules, 

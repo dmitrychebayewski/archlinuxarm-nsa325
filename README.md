@@ -182,9 +182,9 @@ Start backup.timer and enable it on boot.
 ### Using tmux
 
 It is very convenient to run long during processes (copying files etc.) in [**tmux**](./tmux.md).
-## Take more of your hardaare
+## Take more of your hardware
 ### Docker
-[You can install Docker](./docker.md) and let Docker run endless useful services packaged as Docker container!
+[You can install Docker](./docker.md) and let Docker run endless useful services packaged as Docker containers!
 
 ## Asking questions
 
