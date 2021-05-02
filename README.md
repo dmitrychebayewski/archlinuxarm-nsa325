@@ -41,6 +41,13 @@ I used Arch linux Vagrant image for virtualbox, available on the Vagrant Cloud, 
 See [restore_roott_fs](./scripts/restore_root_fs.sh)
 ### Making bootable partitions
 See [restore_root_fs](./scripts/restore_root_fs.sh)
+### Adding record(s) to /etc/fstab to mount the bootable partition at /boot
+[more about bootable partition mount](./corrected_mistakes.md)
+```
+# <file system> <dir> <type> <options> <dump> <pass>                                                                          /dev/sda1     /boot        ext2 rw,relatime     0        2   
+ 
+```
+
 ### Installing HDD /SSD
 Once bootable Alarm SSD / HDD is prepared, install it in Slot 0 of your NAS.
 ### Starting NAS first time
@@ -175,6 +182,9 @@ Start backup.timer and enable it on boot.
 ### Using tmux
 
 It is very convenient to run long during processes (copying files etc.) in [**tmux**](./tmux.md).
+## Take more of your hardaare
+### Docker
+[You can install Docker](./docker.md) and let Docker run endless useful services packaged as Docker container!
 
 ## Asking questions
 
@@ -188,8 +198,12 @@ Q. What are advantages of Arch Linux ARM over factory ZyXEL Nas OS?
 Q. What are disadvantages Arch Linux Arm customisation compared to factory ZyXEL Nas OS?
 >Installing Arch Linux ARM will void ZyXEL warranty. Also, Arch Linux Arm is "rolling release" system, so you will need to update your syetem on very frequent schedule. You also need to study the updates carefully to know whether they imply breaking changes that could require your intervention.
 
->Factory ZyXEL NOS is reportedly an assembly, based on Arch Linux Arm [(see the article, "Building the Zyxel NAS326" on Craig Amos's blog)](https://www.craigamos.rocks/building-the-zyxel-nas326/).
-But factory configuration  uses a ramdisk to load the Linux kernel, leaving 2 SATA slots available for RAID1 setup. Arch Linux Arm (alarm) rootfs needs one SATA interface for a hard drive, leeaving 1 slot available for user data hard drive, and you cannot configure RAID1. 
+>Factory ZyXEL NOS is reportedly an assembly, based on "Das U-Boot" and Arch Linux Arm [(see the article, "Building the Zyxel NAS326" on Craig Amos's blog)](https://www.craigamos.rocks/building-the-zyxel-nas326/).
+But factory configuration  uses a ramdisk to load the Linux kernel, leaving 2 SATA slots available for RAID1 setup. Arch Linux Arm (alarm) rootfs needs one SATA interface for a drive with boot and rootfs partitions, leaving 1 slot available for user data hard drive. It is not the optimal use of your system as you cannot configure RAID1, having 2 HDD connections. Also, power consumption is not optimal. 
+
+
+## [My list of mistakes](./corrected_mistakes.md)
+
 
 ## Contributing
 
