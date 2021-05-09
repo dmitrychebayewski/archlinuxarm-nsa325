@@ -1,3 +1,8 @@
+## Project status
+The project is not maintained anymore. It is here for historic reasons.
+Described solutions are for 1.2 GHz Marvell Kirkwood 6281 ARM-compatible CPU, a.k.a. Feroceon, ARMv5te architecture which is now abandoned platform. 
+Still, you're able to use Arch Linux Arm, kernel 4.4 Super Long Term Support [EOL February 2022](https://www.kernel.org/category/releases.html) on this platform.
+
 ## What it is
  This documentation describes how to install and update Arch Linux Arm (alarm) server on ZyXEL NAS platform. I am using ZyXEL NAS device as Arch Linux Arm (alarm) for hobby projects.
  [ZyXEL NSA-325](https://archlinuxarm.org/platforms/armv5/zyxel-nsa325)
@@ -193,13 +198,12 @@ Q. What are benefits of NAS for home office over external USB drive?
 So, using NAS, you can collaborate on hobby projects with your partners, and no one needs to use a private computer as file server.
 
 Q. What are advantages of Arch Linux ARM over factory ZyXEL Nas OS?
->When the customer decides for Arch linux ARM, he or she can very flexibly set up any service, any feature, not supported by factory ZyXEL Nas OS meta repositories. Such features are for example NFS4, rtorrent, nginx or tmux.
 
-Q. What are disadvantages Arch Linux Arm customisation compared to factory ZyXEL Nas OS?
->Installing Arch Linux ARM will void ZyXEL warranty. Also, Arch Linux Arm is "rolling release" system, so you will need to update your syetem on very frequent schedule. You also need to study the updates carefully to know whether they imply breaking changes that could require your intervention.
+>Arch Linux Arm is one of a few maintained OS (kernel 4.4) that supports ARMv5te architecture.
 
->Factory ZyXEL NOS is reportedly an assembly, based on "Das U-Boot" and Arch Linux Arm [(see the article, "Building the Zyxel NAS326" on Craig Amos's blog)](https://www.craigamos.rocks/building-the-zyxel-nas326/).
-But factory configuration  uses a ramdisk to load the Linux kernel, leaving 2 SATA slots available for RAID1 setup. Arch Linux Arm (alarm) rootfs needs one SATA interface for a drive with boot and rootfs partitions, leaving 1 slot available for user data hard drive. It is not the optimal use of your system as you cannot configure RAID1, having 2 HDD connections. Also, power consumption is not optimal. 
+Q. What were disadvantages of Arch Linux Arm customisation compared to factory ZyXEL Nas OS?
+>Factory ZyXEL NOS was reportedly an assembly, based on "Das U-Boot" and Arch Linux Arm [(see the article, "Building the Zyxel NAS326" on Craig Amos's blog)](https://www.craigamos.rocks/building-the-zyxel-nas326/).
+But factory configuration  uses a ramdisk to load the Linux kernel, leaving 2 SATA slots available for RAID1 setup. Arch Linux Arm (alarm) rootfs needs one SATA interface for a drive with boot and rootfs partitions, leaving 1 slot available for user data hard drive. It is not the optimal use of your system as you cannot configure RAID1, with potential of 2 HDD connections.
 
 
 ## [My list of mistakes](./corrected_mistakes.md)
