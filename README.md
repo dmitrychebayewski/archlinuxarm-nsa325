@@ -1,5 +1,5 @@
 ## Project status
-The project is not maintained anymore. It is here for historic reasons.
+The project is not maintained anymore. It is here for historical reasons.
 Described solutions are for 1.2 GHz Marvell Kirkwood 6281 ARM-compatible CPU, a.k.a. Feroceon, ARMv5te architecture which is now abandoned platform. 
 Still, you're able to use Arch Linux Arm, kernel 4.4 Super Long Term Support [EOL February 2022](https://www.kernel.org/category/releases.html) on this platform.
 
